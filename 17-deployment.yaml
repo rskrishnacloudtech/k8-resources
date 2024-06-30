@@ -1,5 +1,5 @@
 kind: Deployment
-apiVersion: v1
+apiVersion: app/v1
 metadata:
   name: deployment
   labels:
