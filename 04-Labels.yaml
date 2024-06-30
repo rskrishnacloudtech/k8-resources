@@ -1,0 +1,11 @@
+kind: pod
+apiVersion: v1
+metadata:
+  name: labels
+  labels:
+    author: Siva
+    phone: 1234567890
+spec:
+  containers:
+  - name: nginx
+    image: nginx

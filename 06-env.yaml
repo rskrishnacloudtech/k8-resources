@@ -1,0 +1,13 @@
+kind: pod
+apiVersion: v1
+metadata:
+  name: environment
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    env:
+    - name: author
+      value: 'Siva'
+    - name: phone
+      value: 1234567890

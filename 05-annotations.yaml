@@ -1,0 +1,15 @@
+kind: pod
+apiVersion: v1
+metadata: 
+  name: annotations
+  labels:
+    author: Siva
+    phone: 1234567890
+  annotations:
+    kubernetes.io/created-by: 'siva'
+    jenkins.build.url: 'https://jenkins.com/expense/job/backend/54'
+    
+spec:
+  containers:
+  - name: niginx
+    image: nginx  

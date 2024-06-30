@@ -1,0 +1,18 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: pod-service-np
+spec:
+  type: NodePort
+  selector:
+    name: frontend
+    project: expense
+    component: frontend
+    environment: dev
+  ports:
+  - protocol: TCP
+    port: 80  # Service Port.
+    targetPort: 80  # Target port
+    # This will open a fixed node port. If this is not given by default it will open any port 
+    # between 30000-32767 range.
+    nodePort: 30001

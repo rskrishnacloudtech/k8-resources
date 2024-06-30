@@ -1,0 +1,24 @@
+kind: pod
+apiVersion: v1
+metadata:
+  name: pod-config
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    # To refer individual value of configuration from the configmap.
+    env:
+    - name: author
+      valueFrom:
+        configMapKeyRef:
+          name: configmap
+          key: author
+    - name: phone:
+      valueFrom:
+        configMapKeyRef:
+          name: configmap
+          key: phone
+    # To refer all the configuration from the configmap.
+    envFrom:
+      configMapRef:
+        name: configmap
