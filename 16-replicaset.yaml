@@ -1,0 +1,25 @@
+kind: ReplicaSet
+apiVersion: v1
+metadata:
+  name: replicaset
+  # these labels belongs to replicaset resource.
+  labels:
+    name: nginx
+    tier: frontend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      tier: frontend
+      app: nginx
+  # Below is pod definition.
+  template:
+    metadata:
+      labels:
+        tier: frontend
+        app: nginx
+        project: projectName
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
